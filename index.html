@@ -8,6 +8,10 @@
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#2b7a78">
   <link rel="icon" href="icon-192.png">
+
+  <!-- Tambahkan Library jsPDF dan AutoTable -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.29/jspdf.plugin.autotable.min.js"></script>
 </head>
 <body>
   <h2>Pembukuan Harian</h2>
@@ -25,6 +29,10 @@
     <button type="submit">Simpan</button>
     <button type="button" onclick="resetData()" class="reset-btn">Reset Semua</button>
   </form>
+
+  <!-- Tombol tambahan -->
+  <button onclick="toggleDarkMode()" class="toggle-dark">Mode Gelap/Terang</button>
+  <button onclick="exportToPDF()">Export ke PDF</button>
 
   <table id="tabel">
     <thead>
