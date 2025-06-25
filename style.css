@@ -1,21 +1,43 @@
+/* Gaya Dasar */
 body {
   font-family: Arial, sans-serif;
   max-width: 600px;
   margin: auto;
   padding: 20px;
+  background-color: #ffffff;
+  color: #000000;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 input, select, button {
   padding: 8px;
   margin: 5px 0;
   width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
+/* Tombol reset */
 button.reset-btn {
   background: red;
   color: white;
+  border: none;
+  cursor: pointer;
 }
 
+/* Tombol mode gelap */
+.toggle-dark {
+  margin-top: 10px;
+  padding: 8px;
+  background: #444;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* Tabel */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -32,4 +54,35 @@ th, td {
   font-weight: bold;
   margin-top: 10px;
   font-size: 18px;
+}
+
+/* ========== MODE GELAP ========== */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.dark-mode input,
+.dark-mode select,
+.dark-mode button {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border: 1px solid #555;
+}
+
+.dark-mode table {
+  border-color: #555;
+}
+
+.dark-mode th,
+.dark-mode td {
+  border: 1px solid #555;
+}
+
+.dark-mode .reset-btn {
+  background: #b00020;
+}
+
+.dark-mode .toggle-dark {
+  background: #666;
 }
