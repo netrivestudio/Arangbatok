@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pembukuan Harian</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2b7a78">
+  <link rel="icon" href="icon-192.png">
+</head>
+<body>
+  <h2>Pembukuan Harian</h2>
+
+  <form id="form">
+    <label>Tanggal:</label>
+    <input type="date" id="tanggal" required>
+    <label>Nominal:</label>
+    <input type="number" id="nominal" required>
+    <label>Jenis:</label>
+    <select id="jenis" required>
+      <option value="pemasukan">Pemasukan</option>
+      <option value="pengeluaran">Pengeluaran</option>
+    </select>
+    <button type="submit">Simpan</button>
+    <button type="button" onclick="resetData()" class="reset-btn">Reset Semua</button>
+  </form>
+
+  <table id="tabel">
+    <thead>
+      <tr>
+        <th>Tanggal</th>
+        <th>Pemasukan</th>
+        <th>Pengeluaran</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <div class="total" id="total">Total: Rp 0</div>
+
+  <script src="script.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js')
+        .then(() => console.log('Service Worker terdaftar'))
+        .catch(err => console.error('SW gagal:', err));
+    }
+  </script>
+</body>
+</html>
